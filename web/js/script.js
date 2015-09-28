@@ -25,7 +25,7 @@
           $('.upload_notify').hide(100);
           $('html').removeClass('drag-hover');
           $('html').removeClass('uploading');
-          return window.location = "http://s.shapetape.xyz/" + url;
+          return window.location = "" + (url.split(".")[0]);
         }
       };
       xhr.onerror = function() {

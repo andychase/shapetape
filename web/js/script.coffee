@@ -24,7 +24,7 @@ do ->
         $('.upload_notify').hide(100)
         $('html').removeClass('drag-hover')
         $('html').removeClass('uploading')
-        window.location = "http://s.shapetape.xyz/#{url}"
+        window.location = "#{url.split(".")[0]}"
 
     xhr.onerror = ->
       problem_notify()
