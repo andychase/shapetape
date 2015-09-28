@@ -27,7 +27,7 @@
 
     <div class="color-wrapper">
         <div class="inner-wrapper">
-            <form method="POST" action="/submit_form" class="uploader">
+            <form method="POST" action="" class="uploader">
                 <input type="file" id="file_input"/>
                 <input type="submit" id="file_upload_button" value="upload"/>
             </form>

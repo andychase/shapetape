@@ -2,14 +2,17 @@ do ->
   problem_notify = ->
     $('html').removeClass('uploading')
     $('html').removeClass('drag-hover')
+    $('.upload_notify').hide()
+    $('.drag-message').removeClass('drag-hover')
+
     $('html').addClass('error')
     window.setTimeout(->
       $('html').removeClass('error')
+      $('.description').removeClass('drag-hover')
       $('.uploader').show(100)
-      $('.upload_notify').hide(100)
     , 2000)
 
-    $('.error_notify').show(100).delay(2000).hide(100)
+    $('.error_notify').show(100).delay(2000).hide(1)
 
   upload_file = (file, signed_request, url) ->
     xhr = new XMLHttpRequest
@@ -30,6 +33,7 @@ do ->
 
   sendFile = (file) ->
     $('html').removeClass('drag-hover')
+    $('.drag-message').removeClass('drag-hover')
     $('html').addClass('uploading')
     $('.uploader').hide(100)
     $('.upload_notify').show(100)

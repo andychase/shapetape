@@ -5,13 +5,15 @@
     problem_notify = function() {
       $('html').removeClass('uploading');
       $('html').removeClass('drag-hover');
+      $('.upload_notify').hide();
+      $('.drag-message').removeClass('drag-hover');
       $('html').addClass('error');
       window.setTimeout(function() {
         $('html').removeClass('error');
-        $('.uploader').show(100);
-        return $('.upload_notify').hide(100);
+        $('.description').removeClass('drag-hover');
+        return $('.uploader').show(100);
       }, 2000);
-      return $('.error_notify').show(100).delay(2000).hide(100);
+      return $('.error_notify').show(100).delay(2000).hide(1);
     };
     upload_file = function(file, signed_request, url) {
       var xhr;
@@ -33,6 +35,7 @@
     };
     sendFile = function(file) {
       $('html').removeClass('drag-hover');
+      $('.drag-message').removeClass('drag-hover');
       $('html').addClass('uploading');
       $('.uploader').hide(100);
       $('.upload_notify').show(100);
