@@ -67,8 +67,8 @@
 </div>
 
 <div id="img-container">
-    <img src="http://s.shapetape.xyz/<?php $_GET['v'] ?>.svg" id='placeholder'>
-    <img src="http://s.shapetape.xyz/<?php $_GET['v'] ?>.svg" id='vector'>
+    <img src="http://s.shapetape.xyz/<?php echo($_GET['v']); ?>.svg" id='placeholder'>
+    <img src="http://s.shapetape.xyz/<?php echo($_GET['v']); ?>.svg" id='vector'>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/viewer.js"></script>
