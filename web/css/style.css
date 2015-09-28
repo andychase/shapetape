@@ -111,7 +111,6 @@ html {
   color: #7073cf; }
 
 #logo .char1 {
-  -webkit-transform: rotate(-3deg);
   top: 0; }
   #logo .char1:hover {
     top: 3px; }
@@ -122,19 +121,17 @@ html {
     bottom: 3px; }
 
 #logo .char3 {
-  bottom: -1px;
-  -webkit-transform: rotate(2deg); }
+  bottom: -1px; }
   #logo .char3:hover {
     bottom: 2px; }
 
 #logo .char4 {
-  top: -7px; }
+  top: 0; }
   #logo .char4:hover {
     top: -4px; }
 
 #logo .char6 {
-  top: -7px;
-  -webkit-transform: rotate(2deg); }
+  top: 0; }
   #logo .char6:hover {
     top: -4px; }
 
@@ -144,14 +141,12 @@ html {
     top: 3px; }
 
 #logo .char8 {
-  top: 1px;
-  -webkit-transform: rotate(-2deg); }
+  top: 1px; }
   #logo .char8:hover {
     top: 3px; }
 
 #logo .char9 {
-  top: 0;
-  -webkit-transform: rotate(2deg); }
+  top: 0; }
   #logo .char9:hover {
     top: 3px; }
 
@@ -161,8 +156,7 @@ html {
     top: 3px; }
 
 #logo .char11 {
-  top: 2px;
-  -webkit-transform: rotate(3deg); }
+  top: 2px; }
   #logo .char11:hover {
     top: 0; }
 
