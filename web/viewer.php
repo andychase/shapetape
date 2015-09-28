@@ -63,7 +63,7 @@
 </head>
 <body>
 <div class="top">
-    <img src="img/small_logo.svg" class='small-logo'>
+    <a href="/"><img src="img/small_logo.svg" class='small-logo'></a>
     <label>Zoom:<input class="slider" type="range" min="70" max="200" step="1" value="100"/></label>
 </div>
 
