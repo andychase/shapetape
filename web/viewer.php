@@ -46,7 +46,7 @@
         .top {
             z-index: 300;
             background-color: rgba(255, 255, 255, 1);
-            position: fixed;
+            position: absolute;
             left: 0;
             top: 0;
             width: 100%;
