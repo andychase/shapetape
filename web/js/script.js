@@ -45,17 +45,23 @@
       });
     };
     setup = function() {
-      var html;
+      var description, dragMessage, html;
+      dragMessage = $('.drag-message');
+      description = $('.description');
       $('#file_upload_button').click(function() {
         return sendFile($('#file_input').files[0]);
       });
       html = $('html');
       html.addClass('ready');
       html.on("dragover", function() {
-        return html.addClass('drag-hover');
+        html.addClass('drag-hover');
+        dragMessage.addClass('drag-hover');
+        return description.addClass('drag-hover');
       });
       html.on("dragleave", function() {
-        return html.removeClass('drag-hover');
+        html.removeClass('drag-hover');
+        dragMessage.removeClass('drag-hover');
+        return description.removeClass('drag-hover');
       });
       window.addEventListener('dragover', (function(e) {
         e = e || event;

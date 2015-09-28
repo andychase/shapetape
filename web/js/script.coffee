@@ -40,6 +40,9 @@ do ->
         problem_notify()
 
   setup = ->
+    dragMessage = $('.drag-message')
+    description = $('.description')
+
     $('#file_upload_button').click ->
       sendFile $('#file_input').files[0]
 
@@ -47,8 +50,12 @@ do ->
     html.addClass('ready')
     html.on "dragover", ->
       html.addClass('drag-hover')
+      dragMessage.addClass('drag-hover')
+      description.addClass('drag-hover')
     html.on "dragleave", ->
       html.removeClass('drag-hover')
+      dragMessage.removeClass('drag-hover')
+      description.removeClass('drag-hover')
     window.addEventListener 'dragover', ((e) ->
       e = e or event
       e.preventDefault()

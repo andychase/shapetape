@@ -170,3 +170,17 @@ html {
   left: -24px; }
   #logo .char12:hover {
     top: 3px; }
+
+.description, .drag-message {
+  -webkit-transition: opacity 0.1s ease-out;
+  transition: opacity 0.1s ease-out; }
+
+.description.drag-hover {
+  opacity: 0; }
+
+.drag-message {
+  opacity: 0;
+  text-align: center; }
+
+.drag-message.drag-hover {
+  opacity: 1; }

@@ -35,9 +35,12 @@
 
             <h2 class="error_notify" style="display:none;">Problem uploading file</h2>
 
-            <p>
+            <p class="description">
                 Shapetape is an online vector graphics hosting service. Upload your svg files
                 and we'll provide you with a public link and a viewer for sharing with the world.
+            </p>
+            <p class="drag-message">
+                Drop files on this page to upload!
             </p>
         </div>
     </div>
