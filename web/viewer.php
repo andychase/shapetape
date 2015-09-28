@@ -49,9 +49,10 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 100%;
+            padding-right: 10px;
+            margin: 10px;
             height: 60px;
-            border-bottom: 1px solid black;
+            border: 1px solid black;
         }
 
         .top label {
