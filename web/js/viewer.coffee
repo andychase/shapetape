@@ -22,6 +22,8 @@ $ ->
       zooming = true
     slideValue = this.value
     img_container.css('width', slideValue + "%")
+    if slideValue <= 71
+      img_container.css('width', "auto")
 
   $('.slider').on 'mouseup', ->
     if zooming

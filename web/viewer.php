@@ -32,7 +32,6 @@
 
         #img-container {
             position: absolute;
-            width: 90%;
             left: 0;
             top: 61px;
         }
@@ -64,7 +63,7 @@
 <body>
 <div class="top">
     <a href="/"><img src="img/small_logo.svg" class='small-logo'></a>
-    <label>Zoom:<input class="slider" type="range" min="70" max="200" step="1" value="100"/></label>
+    <label>Zoom:<input class="slider" type="range" min="70" max="200" step="1" value="70"/></label>
 </div>
 
 <div id="img-container">

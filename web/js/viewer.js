@@ -25,7 +25,10 @@
         zooming = true;
       }
       slideValue = this.value;
-      return img_container.css('width', slideValue + "%");
+      img_container.css('width', slideValue + "%");
+      if (slideValue <= 71) {
+        return img_container.css('width', "auto");
+      }
     });
     $('.slider').on('mouseup', function() {
       if (zooming) {
