@@ -51,7 +51,8 @@
             padding-right: 10px;
             margin: 10px;
             height: 60px;
-            border: 1px solid black;
+            border: 3px solid rgba(0, 0, 0, 0.14);
+            border-radius: 4px;
         }
 
         .top label {
