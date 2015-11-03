@@ -53,7 +53,7 @@ html {
   text-transform: uppercase;
   font-family: 'FranchiseRegular', 'HelveticaNeue-Bold', 'League Gothic', 'Impact', sans-serif;
   font-size: 160px;
-  color: #c44032;
+  color: #E36B23;
   margin: 0;
   display: block;
   position: absolute;
@@ -95,20 +95,20 @@ html {
     bottom: 72px; }
 
 #logo .char2, #logo .char11 {
-  color: #e36b23; }
+  color: #4584BE; }
 
 #logo .char3, #logo .char10 {
   z-index: 10;
-  color: #e6c92e; }
+  color: #E6C92E; }
 
 #logo .char4, #logo .char9 {
-  color: #5da028; }
+  color: #E36B23; }
 
 #logo .char5, #logo .char8 {
-  color: #4584be; }
+  color: #E6C92E; }
 
 #logo .char6, #logo .char7 {
-  color: #7073cf; }
+  color: #4584BE; }
 
 #logo .char1 {
   top: 0; }
