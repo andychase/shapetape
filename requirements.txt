@@ -1,0 +1,6 @@
+Flask
+Flask-Assets
+libsass
+cssmin
+redis
+boto3
