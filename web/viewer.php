@@ -56,6 +56,14 @@
         }
 
         .top label {
+            display: inline-block;
+        }
+
+        .top label span {
+            display: block;
+        }
+
+        .top label {
             position: relative;
             bottom: 18%;
         }
@@ -64,7 +72,7 @@
 <body>
 <div class="top">
     <a href="/"><img src="img/small_logo.svg" class='small-logo'></a>
-    <label>Zoom:<input class="slider" type="range" min="70" max="200" step="1" value="70"/></label>
+    <label><span>Zoom</span><input class="slider" type="range" min="70" max="200" step="1" value="70"/></label>
 </div>
 
 <div id="img-container">
