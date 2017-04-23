@@ -37,9 +37,9 @@ do ->
     $('html').addClass('uploading')
     $('.uploader').hide(100)
     $('.upload_notify').show(100)
-    $.get '/upload_request.php', {}, (data) ->
+    $.get '/upload_request', {}, (data) ->
       if data.request?
-        upload_file file, data.request, data.url
+        upload_file file, data
       else
         problem_notify()
 

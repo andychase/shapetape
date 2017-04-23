@@ -1,9 +1,13 @@
 import os
+import uuid
 
 import boto3
-from flask import render_template, request, redirect, current_app, jsonify
+from botocore.config import Config
+from flask import render_template, request, redirect, jsonify, Flask
 
-from settings import app, redis
+DEBUG = os.getenv('DEBUG', 'true') == 'true'
+BUCKET = os.getenv('S3_BUCKET', 'shapetape')
+app = Flask(__name__)
 
 
 @app.route('/')
@@ -13,20 +17,17 @@ def index():
 
 @app.route('/upload_request')
 def upload_request():
-    key = redis.incr('shape_tape_id_index')
-    s3 = boto3.resource('s3')
+    key = uuid.uuid4()
+    s3 = boto3.client('s3', config=Config(signature_version='s3v4'))
     post_request = s3.generate_presigned_post(
-        current_app.config['bucket'],
-        'shapes/{}.svg'.format(key),
-        {
+        Bucket=BUCKET,
+        Key='shapes/{}.svg'.format(key),
+        Fields={
             'ContentType': 'image/svg+xml',
             'ACL': 'public-read'
         }
     )
-    return jsonify({
-        'request': post_request['url'],
-        'url': '{}.svg'.format(key)
-    })
+    return jsonify(post_request)
 
 
 @app.route('/<int:vector>')

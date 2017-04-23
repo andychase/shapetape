@@ -1,20 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Shapetape: The most awesome vector graphics on the Internet</title>
+    <title>Shapetape: Easy vector graphics hosting service.</title>
     <meta name="robots" content="follow,index"/>
     <meta name="description"
           content="Shapetape is the best place to share and enjoy the most awesome images on the Internet. You can use shapetape to share high quality graphics all around the world."/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    {% assets "js_all" %}
-        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-    {% endassets %}
-    {% assets "css_all" %}
-        <link href='{{ ASSET_URL }}' rel='stylesheet' type='text/css'>
-    {% endassets %}
+    <link href='/static/css/style.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -53,7 +48,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/script.js"></script>
+<script src="/static/js/script.js"></script>
 
 <script>
     (function (i, s, o, g, r, a, m) {

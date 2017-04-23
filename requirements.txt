@@ -1,6 +1,2 @@
-Flask
-Flask-Assets
-libsass
-cssmin
-redis
-boto3
+Flask==0.12.1
+boto3==1.4.4
