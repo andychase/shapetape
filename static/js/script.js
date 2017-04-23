@@ -15,23 +15,28 @@
       }, 2000);
       return $('.error_notify').show(100).delay(2000).hide(1);
     };
-    upload_file = function(file, signed_request, url) {
-      var xhr;
+    upload_file = function(file, signed_request_data) {
+      var formData, key, xhr;
       xhr = new XMLHttpRequest;
-      xhr.open('PUT', signed_request);
+      xhr.open('POST', signed_request_data.url, true);
+      formData = new FormData();
+      for (key in signed_request_data.fields) {
+        formData.append(key, signed_request_data.fields[key]);
+      }
+      formData.append('file', file);
       xhr.onload = function() {
-        if (xhr.status === 200) {
+        if (xhr.status === 204) {
           $('.uploader').show(100);
           $('.upload_notify').hide(100);
           $('html').removeClass('drag-hover');
           $('html').removeClass('uploading');
-          return window.location = "" + (url.split(".")[0]);
+          return window.location = signed_request_data.fields.key.split("/")[1].split(".")[0];
         }
       };
       xhr.onerror = function() {
         return problem_notify();
       };
-      return xhr.send(file);
+      return xhr.send(formData);
     };
     sendFile = function(file) {
       $('html').removeClass('drag-hover');
@@ -40,7 +45,7 @@
       $('.uploader').hide(100);
       $('.upload_notify').show(100);
       return $.get('/upload_request', {}, function(data) {
-        if (data.request != null) {
+        if (data.fields != null) {
           return upload_file(file, data);
         } else {
           return problem_notify();

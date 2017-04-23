@@ -23,19 +23,27 @@ def upload_request():
         Bucket=BUCKET,
         Key='shapes/{}.svg'.format(key),
         Fields={
-            'ContentType': 'image/svg+xml',
+            'Content-Type': 'image/svg+xml',
             'ACL': 'public-read'
-        }
+        },
+        Conditions=[
+            {
+                'acl': 'public-read'
+            },
+            {
+                'contenttype': 'image/svg+xml'
+            }
+        ]
     )
     return jsonify(post_request)
 
 
-@app.route('/<int:vector>')
+@app.route('/<string:vector>')
 def viewer(vector):
-    return render_template('viewer.html', v=int(vector))
+    return render_template('viewer.html', v=vector)
 
 
-@app.route('/<int:vector>.svg')
+@app.route('/<string:vector>.svg')
 def view_svg(vector):
     if 'gzip' in request.headers.get('HTTP_ACCEPT_ENCODING'):
         return redirect('http://s.shapetape.xyz/{}.svg.gz'.format(vector), 303)

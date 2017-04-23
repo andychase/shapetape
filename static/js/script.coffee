@@ -14,22 +14,26 @@ do ->
 
     $('.error_notify').show(100).delay(2000).hide(1)
 
-  upload_file = (file, signed_request, url) ->
+  upload_file = (file, signed_request_data) ->
     xhr = new XMLHttpRequest
-    xhr.open 'PUT', signed_request
+    xhr.open 'POST', signed_request_data.url, true
+    formData = new FormData()
+    for key of signed_request_data.fields
+      formData.append(key, signed_request_data.fields[key])
+    formData.append('file', file)
 
     xhr.onload = ->
-      if xhr.status == 200
+      if xhr.status == 204
         $('.uploader').show(100)
         $('.upload_notify').hide(100)
         $('html').removeClass('drag-hover')
         $('html').removeClass('uploading')
-        window.location = "#{url.split(".")[0]}"
+        window.location = signed_request_data.fields.key.split("/")[1].split(".")[0]
 
     xhr.onerror = ->
       problem_notify()
 
-    xhr.send file
+    xhr.send formData
 
   sendFile = (file) ->
     $('html').removeClass('drag-hover')
@@ -38,7 +42,7 @@ do ->
     $('.uploader').hide(100)
     $('.upload_notify').show(100)
     $.get '/upload_request', {}, (data) ->
-      if data.request?
+      if data.fields?
         upload_file file, data
       else
         problem_notify()
