@@ -31,7 +31,7 @@ def upload_request():
                 'acl': 'public-read'
             },
             {
-                'contenttype': 'image/svg+xml'
+                'Content-Type': 'image/svg+xml'
             }
         ]
     )
